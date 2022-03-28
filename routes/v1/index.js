@@ -11,5 +11,5 @@ router.get('/', (req, res) => {
 router.use('/info', require('./info/index'));
 router.use('/canvas', require('./canvas/index'))
 router.use('/meme', require('./fun/meme'))
-
+router.use('/random', require('./random/index'))
 module.exports = router;
