@@ -10,5 +10,6 @@ router.get('/', (req, res) => {
 
 router.use('/animeinfo', require('./animeinfo'));
 router.use('/geoip', require('./geoip'));
+router.use('/dog', require('./dog'));
 
 module.exports = router;
