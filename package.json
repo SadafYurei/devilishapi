@@ -1,0 +1,52 @@
+{
+  "name": "express-api-template-1",
+  "version": "2.0.0",
+  "description": "Minimal starter project for a Node.js RESTful API based off express generator",
+  "main": "index.js",
+  "devDependencies": {
+    "eslint": "^8.6.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.1",
+    "canvacord": "^5.2.3",
+    "compression": "^1.7.4",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "express": "^4.17.2",
+    "geoip-lite": "^1.4.4",
+    "helmet": "^5.0.1",
+    "ipinfo": "^1.5.1",
+    "iplookup": "^0.0.9",
+    "md5": "^2.3.0",
+    "method-override": "^3.0.0",
+    "morgan": "^1.10.0",
+    "node-fetch": "2.6.6",
+    "sqlite3": "^5.0.2",
+    "xss-clean": "^0.1.1"
+  },
+  "scripts": {
+    "start": "node ./server.js",
+    "dev": "nodemon ./server.js",
+    "lint:fix": "eslint ./server.js --fix",
+    "fix:other": "yarn prettier --write \"./**/*.{js,json}\"",
+    "fix:code": "yarn test:code --fix",
+    "fix": "yarn fix:code && yarn fix:other",
+    "test:code": "eslint --ignore-path .gitignore --ignore-path .prettierignore --ext .js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NotKaskus/express-api-template.git"
+  },
+  "keywords": [
+    "nodejs"
+  ],
+  "author": "KASKUSTTV",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/NotKaskus/express-api-template/issues"
+  },
+  "homepage": "https://github.com/NotKaskus/express-api-template#readme"
+}
