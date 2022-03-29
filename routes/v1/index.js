@@ -10,6 +10,11 @@ router.get('/', (req, res) => {
 
 router.use('/info', require('./info/index'));
 router.use('/canvas', require('./canvas/index'))
-router.use('/meme', require('./fun/meme'))
 router.use('/random', require('./random/index'))
+
+// Single Files
+
+router.use('/meme', require('./fun/meme'))
+router.use('/skyrim', require('./fun/skyrim'))
+
 module.exports = router;
