@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
 
 		if(req.query.raw == "yes"){
 			return res.json({
-				url: `${req.protocol}://${req.get('host')}/api/v1/canvas/changemymind?avatar=${req.query.avatar}`
+				url: `${req.protocol}://${req.get('host')}/api/v1/canvas/changemymind?avatar=${req.query.avatar.replace(/\s+/g, "%20")}`
 			})
 		}
 
