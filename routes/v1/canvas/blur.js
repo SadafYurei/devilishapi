@@ -11,7 +11,15 @@ router.get('/', (req, res) => {
 	};
 		Canvacord.Canvas.blur(req.query.avatar)
 	.then(data => {
-		var result = Buffer.from(data, 'affect.jpeg') // Use jpeg mime type for faster response
+
+		if(req.query.raw == "yes"){
+			return res.json({
+				url: `${req.protocol}://${req.get('host')}/api/v1/canvas/blur?avatar=${req.query.avatar}`
+			})
+		}
+
+
+		var result = Buffer.from(data, 'blur.jpeg') // Use jpeg mime type for faster response
 		res.setHeader('Content-Type', 'image/jpeg')
 		res.end(result)
 	})

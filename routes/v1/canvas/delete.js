@@ -11,6 +11,14 @@ router.get('/', (req, res) => {
 	};
 	Canvacord.Canvas.delete(req.query.avatar)
 	.then(data => {
+
+		if(req.query.raw == "yes"){
+			return res.json({
+				url: `${req.protocol}://${req.get('host')}/api/v1/canvas/delete?avatar=${req.query.avatar}`
+			})
+		}
+
+
 		var result = Buffer.from(data, 'delete.jpeg') // Use jpeg mime type for faster response
 		res.setHeader('Content-Type', 'image/jpeg')
 		res.end(result)
