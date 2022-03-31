@@ -17,7 +17,7 @@ router.get('/', async (req, res) => {
     }else{
       var json = {
         error:"unknown id"}
-     res.json(json);
+     res.status(500).json(json);
    }
   
 });
