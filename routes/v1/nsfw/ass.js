@@ -1,23 +1,23 @@
 const router = require('express').Router();
-const skyrim = require('../../../assets/test.json')
+const ass = require('../../../data/ass.json')
 router.get('/', async (req, res) => {
 
 
-    var i = Math.floor(Math.random() * skyrim.length);
+    var i = Math.floor(Math.random() * ass.length);
     //getting a random number
     i = req.query.id ? req.query.id : i;
-    const result = skyrim[i]
+    const result = ass[i]
     res.header('Content-Type', 'application/json');
     var data = {
       "id":i.toString(),
-      "data" : skyrim[i]
+      "data" : ass[i]
     };
     if(result){
-     res.send(JSON.stringify(data, null, 5));
+     res.json(data);
     }else{
       var json = {
-        error:"That ID does not exist!"}
-     res.send(JSON.stringify(json, null, 5));
+        error:"unknown id"}
+     res.status(500).json(json);
    }
   
 });

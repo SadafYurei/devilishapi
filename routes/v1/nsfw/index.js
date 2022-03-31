@@ -4,6 +4,6 @@ router.get("/", (req, res) => {
     res.send(fs.readFileSync("C:\\Users\\devilish\\Desktop\\api v3\\routes\\v1\\nsfw\\index.html", "utf-8"))
 })
 
-router.use('/test', require('./test'))
+router.use('/ass', require('./ass'))
 
 module.exports = router;
