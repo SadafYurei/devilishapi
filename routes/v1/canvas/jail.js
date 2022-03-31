@@ -11,9 +11,10 @@ router.get('/', (req, res) => {
 	};
 	Canvacord.Canvas.jail(req.query.avatar)
 	.then(data => {
-		if(req.query.raw == "yes"){
+		if(req.query.raw == "1"){
 			return res.json({
-				url: `${req.protocol}://${req.get('host')}/api/v1/canvas/jail?avatar=${req.query.avatar}`
+				url: `${req.protocol}://${req.get('host')}/api/v1/canvas/jail?avatar=${req.query.avatar}`,
+				status: res.statusCode
 			})
 		}
 

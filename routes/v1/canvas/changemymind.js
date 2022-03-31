@@ -12,9 +12,10 @@ router.get('/', (req, res) => {
 	Canvacord.Canvas.changemymind(req.query.avatar)
 	.then(data => {
 
-		if(req.query.raw == "yes"){
+		if(req.query.raw == "1"){
 			return res.json({
-				url: `${req.protocol}://${req.get('host')}/api/v1/canvas/changemymind?avatar=${req.query.avatar.replace(/\s+/g, "%20")}`
+				url: `${req.protocol}://${req.get('host')}/api/v1/canvas/changemymind?avatar=${req.query.avatar.replace(/\s+/g, "%20")}`,
+				status: res.statusCode
 			})
 		}
 
