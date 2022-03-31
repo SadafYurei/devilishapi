@@ -13,11 +13,11 @@ router.get('/', async (req, res) => {
       "data" : skyrim[i]
     };
     if(result){
-     res.send(JSON.stringify(data, null, 4));
+     res.json(data);
     }else{
       var json = {
         error:"unknown id"}
-     res.send(JSON.stringify(json, null, 4));
+     res.json(json);
    }
   
 });
