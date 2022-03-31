@@ -10,7 +10,7 @@ router.get('/', async (req, res) => {
     res.header('Content-Type', 'application/json');
     var data = {
       "id":i.toString(),
-      "data" : ass[i]
+      "data" : ass[i].url
     };
     if(result){
      res.json(data);
