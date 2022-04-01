@@ -25,9 +25,11 @@ router.get('/', (req, res) => {
 		res.end(result)
 	})
 	.catch(err =>{
-		res.json({
-			error: "Invalid image, or there was a error!"
-		})
+		return res.status(400).json({
+			status: 400,
+			message: 'Invalid text, or error?',
+			example: `${err.stack}`
+		});
 		console.log(err.stack)
 	})
 })

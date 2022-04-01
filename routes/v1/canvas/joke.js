@@ -5,22 +5,22 @@ router.get('/', (req, res) => {
 	if(!req.query.avatar) {
 		return res.status(400).json({
 			status: 400,
-			message: 'Missing avatar parameter',
-			example: `${req.protocol}://${req.get('host')}/api/v1/canvas/beautiful?avatar=AVATAR_URL`
+			message: 'Missing image parameter',
+			example: `${req.protocol}://${req.get('host')}/api/v1/canvas/joke?avatar=AVATAR_URL`
 		});
 	};
-	Canvacord.Canvas.beautiful(req.query.avatar)
+		Canvacord.Canvas.jokeOverHead(req.query.avatar)
 	.then(data => {
 
 		if(req.query.raw == "1"){
 			return res.json({
-				url: `${req.protocol}://${req.get('host')}/api/v1/canvas/beautiful?avatar=${req.query.avatar}`,
+				url: `${req.protocol}://${req.get('host')}/api/v1/canvas/joke?avatar=${req.query.avatar}`,
 				status: res.statusCode
 			})
 		}
 
 
-		var result = Buffer.from(data, 'beautiful.jpeg') // Use jpeg mime type for faster response
+		var result = Buffer.from(data, 'joke.jpeg') // Use jpeg mime type for faster response
 		res.setHeader('Content-Type', 'image/jpeg')
 		res.end(result)
 	})
