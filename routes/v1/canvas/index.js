@@ -15,4 +15,7 @@ router.use('/hitler', require('./hitler'))
 router.use('/bed', require('./bed'))
 router.use('/joke', require('./joke'))
 router.use('/clyde', require('./clyde'))
+router.use('/fuse', require('./fuse'))
+router.use('/ph', require('./ph'))
+
 module.exports = router;
