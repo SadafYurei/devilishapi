@@ -31,10 +31,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 // Use router
 app.use('/', require('./routes/index'));
-
+app.use('/music', require('./routes/music/index'))
 // Use middlware
 app.use(notFoundHandler) // 404 request handler
 app.use(errorHandler) // 500 internal error request handler
+
+
 
 // Export app
 module.exports = app;
